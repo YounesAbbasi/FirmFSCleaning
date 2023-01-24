@@ -25,7 +25,7 @@ class FirmFS:
                 Bsdf = pd.concat([Bsdf,pd.read_excel(Bs)])
             except:
                 os.remove(Bs)
-        return Bsdf
+        return Bsdf.reset_index(drop=True)
 
     def UniqueTitle(self):
         df = self.ImportingData()
